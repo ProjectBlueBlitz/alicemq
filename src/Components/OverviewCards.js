@@ -56,9 +56,9 @@ const OverviewCards = (props) => {
       
         <Card className="s1">
           <CardContent>
-            <Typography color='inherit' gutterBottom>
+            <Typography color='inherit'>
               Total Delivered
-        </Typography>
+            </Typography>
             <Typography variant="h5"  color='inherit'>
               {numeral(`${props.message_stats.deliver_get}`).format('0,0')}
             </Typography>
@@ -67,9 +67,9 @@ const OverviewCards = (props) => {
 
         <Card className="s2" border={1} bordercolor="secondary.main">
           <CardContent>
-            <Typography color='inherit' gutterBottom>
+            <Typography color='inherit'>
               Published/s
-        </Typography>
+            </Typography>
             <Typography variant="h5" component="h2" color='inherit'>
             {/* TODO: Bug, publish_details is undefined after rabbit resets with no messages */}
               {numeral(`${props.message_stats.publish_details.rate}`).format('0,0')}
@@ -79,9 +79,9 @@ const OverviewCards = (props) => {
 
         <Card className="s3" border={1} bordercolor="secondary.main">
           <CardContent>
-            <Typography color='inherit' gutterBottom>
+            <Typography color='inherit'>
               Total Published
-        </Typography>
+            </Typography>
             <Typography variant="h5" component="h2" color='inherit'>
               {numeral(`${props.message_stats.publish}`).format('0,0')}
             </Typography>
@@ -90,9 +90,9 @@ const OverviewCards = (props) => {
 
         <Card className="s4" border={1} bordercolor="secondary.main">
           <CardContent>
-            <Typography color='inherit' gutterBottom>
+            <Typography color='inherit'>
               Total NoAck
-        </Typography>
+            </Typography>
             <Typography variant="h5" component="h2" color='inherit'>
               {numeral(`${props.message_stats.deliver_no_ack}`).format('0,0')}
             </Typography>
@@ -101,9 +101,9 @@ const OverviewCards = (props) => {
 
         <Card className="s5" border={1} bordercolor="secondary.main">
           <CardContent>
-            <Typography color='inherit' gutterBottom>
+            <Typography color='inherit'>
               In-Queue
-        </Typography>
+            </Typography>
             <Typography variant="h5" component="h2" color='inherit'>
               {numeral(`${props.queue_totals.messages}`).format('0,0')}
             </Typography>
@@ -112,9 +112,9 @@ const OverviewCards = (props) => {
 
         <Card className="s6" border={1} bordercolor="secondary.main">
           <CardContent>
-            <Typography color='inherit' gutterBottom>
+            <Typography color='inherit'>
               Deliveries/s
-        </Typography>
+            </Typography>
             <Typography variant="h5" component="h2" color='inherit'>
               {numeral(`${props.message_stats.deliver_get_details.rate}`).format('0,0')}
             </Typography>
@@ -123,9 +123,9 @@ const OverviewCards = (props) => {
 
         <Card className="s7" border={1} bordercolor="secondary.main">
           <CardContent>
-            <Typography color='inherit' gutterBottom>
+            <Typography color='inherit'>
               Total Redelivered
-        </Typography>
+            </Typography>
             <Typography variant="h5" component="h2" color='inherit'>
               {numeral(`${props.message_stats.redeliver}`).format('0,0')}
             </Typography>
@@ -134,9 +134,9 @@ const OverviewCards = (props) => {
 
         <Card className="s8" border={1} bordercolor="secondary.main">
           <CardContent>
-            <Typography color='inherit' gutterBottom>
+            <Typography color='inherit'>
               Disk Writes
-        </Typography>
+            </Typography>
             <Typography variant="h5" component="h2" color='inherit'>
               {numeral(`${props.message_stats.disk_writes}`).format('0,0')}
             </Typography>

@@ -192,8 +192,16 @@ svg {
   padding-left: 15px;
   background-color: #543393;
   color: #fff;
-  overflow-y: scroll;
+  overflow-y: auto;
 
+}
+
+.nodes-2 ul li {
+  padding: 2px 0;
+}
+
+label:hover {
+  cursor: pointer;
 }
 
 .nodes-2 {
@@ -202,7 +210,7 @@ svg {
   padding-left: 15px;
   background-color: #543393;
   color: #fff;
-  overflow-y: scroll;
+  overflow-y: auto;
 
 }
 
@@ -212,7 +220,7 @@ svg {
   padding-left: 15px;
   background-color: #543393;
   color: #fff;
-  overflow-y: scroll;
+  overflow-y: auto;
 
 }
 
@@ -221,7 +229,7 @@ svg {
   border-radius: 4px;
   padding-left: 15px;
   background-color: #543393;
-  overflow-y: scroll;
+  overflow-y: auto;
   color: #fff;
   scrollbar-color: auto;
 
