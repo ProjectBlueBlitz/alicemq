@@ -1,9 +1,9 @@
 import React from 'react'
 import { Button } from '@material-ui/core';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
 import TrafficButton from '../Components/TrafficButton.jsx'
 
-const buttonTheme = createMuiTheme({
+const buttonTheme = createTheme({
   typography: {
     useNextVariants: true,
   },
@@ -22,7 +22,7 @@ const buttonTheme = createMuiTheme({
   spacing: 10
 });
 
-const startStopTheme = createMuiTheme({
+const startStopTheme = createTheme({
   typography: {
     useNextVariants: true,
   },

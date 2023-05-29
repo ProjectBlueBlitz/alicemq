@@ -1,6 +1,9 @@
-node_modules
+node_modules/
+.cache/
+dist/
+coverage/
+.vscode/
 package-lock.json
-client/dist
 .env
 *.DS_Store
 *.Rhistory

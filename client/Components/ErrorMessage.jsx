@@ -1,8 +1,8 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography'
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
 
-const redTheme = createMuiTheme({
+const redTheme = createTheme({
   typography: {
     useNextVariants: true,
   },

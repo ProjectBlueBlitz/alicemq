@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import numeral from 'numeral';
@@ -34,7 +34,7 @@ const styles = {
 // };
 //  typographyOptions.caption = caption;
 
-const cardTheme = createMuiTheme({ 
+const cardTheme = createTheme({ 
   typography: {
     useNextVariants: true,
     typographyOptions: { 
@@ -65,7 +65,7 @@ const OverviewCards = (props) => {
           </CardContent>
         </Card>
 
-        <Card className="s2" border={1} borderColor="secondary.main">
+        <Card className="s2" border={1} bordercolor="secondary.main">
           <CardContent>
             <Typography color='inherit' gutterBottom>
               Published/s
@@ -77,7 +77,7 @@ const OverviewCards = (props) => {
           </CardContent>
         </Card>
 
-        <Card className="s3" border={1} borderColor="secondary.main">
+        <Card className="s3" border={1} bordercolor="secondary.main">
           <CardContent>
             <Typography color='inherit' gutterBottom>
               Total Published
@@ -88,7 +88,7 @@ const OverviewCards = (props) => {
           </CardContent>
         </Card>
 
-        <Card className="s4" border={1} borderColor="secondary.main">
+        <Card className="s4" border={1} bordercolor="secondary.main">
           <CardContent>
             <Typography color='inherit' gutterBottom>
               Total NoAck
@@ -99,7 +99,7 @@ const OverviewCards = (props) => {
           </CardContent>
         </Card>
 
-        <Card className="s5" border={1} borderColor="secondary.main">
+        <Card className="s5" border={1} bordercolor="secondary.main">
           <CardContent>
             <Typography color='inherit' gutterBottom>
               In-Queue
@@ -110,7 +110,7 @@ const OverviewCards = (props) => {
           </CardContent>
         </Card>
 
-        <Card className="s6" border={1} borderColor="secondary.main">
+        <Card className="s6" border={1} bordercolor="secondary.main">
           <CardContent>
             <Typography color='inherit' gutterBottom>
               Deliveries/s
@@ -121,7 +121,7 @@ const OverviewCards = (props) => {
           </CardContent>
         </Card>
 
-        <Card className="s7" border={1} borderColor="secondary.main">
+        <Card className="s7" border={1} bordercolor="secondary.main">
           <CardContent>
             <Typography color='inherit' gutterBottom>
               Total Redelivered
@@ -132,7 +132,7 @@ const OverviewCards = (props) => {
           </CardContent>
         </Card>
 
-        <Card className="s8" border={1} borderColor="secondary.main">
+        <Card className="s8" border={1} bordercolor="secondary.main">
           <CardContent>
             <Typography color='inherit' gutterBottom>
               Disk Writes

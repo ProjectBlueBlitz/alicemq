@@ -1,6 +1,5 @@
 const dotenv = require('dotenv').config();
 const rabbit_url = process.env.RABBIT_API_URI
-const fetch = require('node-fetch');
 
 const apiController = {}
 

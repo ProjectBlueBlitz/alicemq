@@ -24,12 +24,12 @@ const styles = {
 const NodeCards = (props) => {
 let cards = [];
   props.nodecards.forEach((card, i) => {
-    cards.push( <React.Fragment>
+    cards.push( <React.Fragment key={'s' + (i + 9)}>
     <Card id={'s' + (i + 9)}>
       <CardContent>
         <Typography color='inherit' gutterBottom>
           {Object.keys(card)[0]}
-    </Typography>
+        </Typography>
         <Typography variant="h5" component="p" color='inherit'>
         {numeral(Object.values(card)[0]).format("0,0") === '0' ? Object.values(card)[0] : numeral(Object.values(card)[0]).format("0,0")}
         </Typography>
@@ -39,11 +39,7 @@ let cards = [];
   })
  
   return (
-    <React.Fragment>
-       {cards}
-    </React.Fragment>
-   
-   
+       cards
    )
  }
 

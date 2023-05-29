@@ -5,7 +5,7 @@ import FrontPage from '../Components/FrontPage.jsx'
 import SignOut from '../Components/SignOut.jsx'
 import Spinner from '../Components/Spinner.jsx'
 import OverviewCards from '../Components/OverviewCards.jsx'
-import "@babel/polyfill";
+// import "@babel/polyfill";
 import BlueBottle from '../../server/blueBottle.js';
 import NodeCards from '../Components/NodeCards.jsx';
 import Typography from '@material-ui/core/Typography';
@@ -41,11 +41,9 @@ class Main extends React.Component {
       hostname: "",
       username: "",
       password: "",
-      port: "",
       // hostname: "192.168.0.236",
       // username: "test",
       // password: "test",
-      // port: "15672",
 
       // hostname: "192.168.0.35",
       // username: "vhs",
@@ -65,7 +63,6 @@ class Main extends React.Component {
       errorHostname: '',
       errorUsername: '',
       errorPassword: '',
-      errorPort: '',
       errorConnection: '',
     }
 
@@ -75,7 +72,6 @@ class Main extends React.Component {
     this.updateHostname = this.updateHostname.bind(this);
     this.updateUsername = this.updateUsername.bind(this);
     this.updatePassword = this.updatePassword.bind(this);
-    this.updatePort = this.updatePort.bind(this);
     this.visualize = this.visualize.bind(this);
     this.updateNodeCards = this.updateNodeCards.bind(this);
     this.toggleVisibility = this.toggleVisibility.bind(this);
@@ -85,10 +81,9 @@ class Main extends React.Component {
     this.validateHostname = this.validateHostname.bind(this);
     this.validateUsername = this.validateUsername.bind(this);
     this.validatePassword = this.validatePassword.bind(this);
-    this.validatePort = this.validatePort.bind(this);
   }
 
-  async tick() {
+  async update() {
     if (this.blueBottle === null) return;
     try{
       const d3Data = await this.blueBottle.getData();
@@ -108,18 +103,14 @@ class Main extends React.Component {
     }
   }
 
-  componentWillMount() {
-    document.body.classList.add('background')
-  }
-
   componentDidMount() {
-    this.timer = setInterval(
-      () => {
-        if(this.state.pause) return;
+    document.body.classList.add('background')
 
-        this.tick()
-      }
-      , 900)
+    this.timer = setInterval(() => {
+      if (this.state.pause) return;
+
+      this.update()
+    }, 5 * 1000) // 5 seconds
   }
   componentWillUnmount() {
     this.blueBottle = null;
@@ -135,9 +126,6 @@ class Main extends React.Component {
   updatePassword(e) {
     this.setState({ password: e.target.value });
   };
-  updatePort(e) {
-    this.setState({ port: e.target.value });
-  };
 
   initializeState() {
     return { hostname: "",
@@ -147,7 +135,6 @@ class Main extends React.Component {
     // username: "vhs",
     // password: "4444",
     d3Data: {},
-    port: "",
     width: (window.innerWidth),
     height: (parent.innerHeight),
     padding: 10,
@@ -188,9 +175,7 @@ class Main extends React.Component {
     const userConfig = {
       host: this.state.hostname,
       username: this.state.username,
-      password: this.state.password,
-      port: this.state.port,
-      isWeb: false
+      password: this.state.password
     };
 
     this.blueBottle = new BlueBottle(userConfig);
@@ -201,15 +186,11 @@ class Main extends React.Component {
     if(this.state.errorHostname !== '') return false; 
     if(this.state.errorUsername !== '') return false;
     if(this.state.errorPassword !== '') return false; 
-    if(this.state.errorPort !== '') return false;
 
     return true;
   }
 
-  // TODO: IMPROVEMENT, validate a non-ip adress
   validateHostname(e){
-    // format: xxx.xxx.xxx.xxx
-    const regexFormat = /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/;
     if(e.target.value){
       this.setState({errorHostname: ''});
       return;
@@ -231,16 +212,6 @@ class Main extends React.Component {
       return;
     }
     this.setState({errorPassword: 'Invalid Password'});
-  }
-  
-  validatePort(e){
-    const numRegex = /^[0-9]*$/
-    if(numRegex.test(e.target.value) && e.target.value){
-      this.setState({errorPort: ''});
-      return;
-    }
-    this.setState({errorPort: 'Invalid Port'});
-
   }
 
   updateNodeCards(node) {
@@ -296,12 +267,10 @@ class Main extends React.Component {
             updateHostname={this.updateHostname}
             updateUsername={this.updateUsername}
             updatePassword={this.updatePassword}
-            updatePort={this.updatePort}
             visualize={this.visualize}
             validateHostname={this.validateHostname}
             validateUsername={this.validateUsername}
             validatePassword={this.validatePassword}
-            validatePort={this.validatePort}
             {...this.state}
           />)
     } 

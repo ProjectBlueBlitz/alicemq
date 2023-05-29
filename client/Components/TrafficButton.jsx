@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
 
-const buttonTheme = createMuiTheme({
+const buttonTheme = createTheme({
   typography: {
     useNextVariants: true,
   },

@@ -1,6 +1,4 @@
-const fetch = require('node-fetch');
 import { Base64 } from 'js-base64';
-
 
 
 /**
@@ -14,30 +12,16 @@ function Carrot(config) {
   this.host = config.host;
   this.username = config.username;
   this.password = config.password;
-  this.port = config.port;
-  this.isWeb = config.isWeb
 
-  // This "credentials" options is needed for /api/bindings CORS issue
-  if (config.isWeb) {
-    this.options = {
-      method: 'GET',
-      credentials: 'include'
-    }
-  } else {
     const headers = new Headers();
     headers.append('Authorization', 'Basic ' + Base64.encode(`${config.username}:${config.password}`));
     this.options = {
       method: 'GET',
-      headers: headers,
+      headers: headers
     }
-  }
 
-  // Port is needed for user hosted server
-  if (config.port)
-    // this.uri = `http://${config.username}:${config.password}@${config.host}:${config.port}/api`;
-    this.uri = `http://${config.host}:${config.port}/api`;
-  else
-    this.uri = `http://${config.username}:${config.password}@${config.host}/api`;
+  const corsProxy = "http://localhost:4000/";
+  this.uri = corsProxy + `https://${config.host}/api`;
 }
 
 

@@ -1,11 +1,13 @@
-import React, { Component }  from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
+import { createRoot } from 'react-dom/client';
+
 import css from './static/style.css';
 import App from './App.jsx'
 
 
 
-const el = document.getElementById('app');
-ReactDOM.render(<App/ >, el )
+const container = document.getElementById('app');
+const root = createRoot(container);
+root.render(<App />);
 
-module.hot.accept();
+// module.hot.accept();

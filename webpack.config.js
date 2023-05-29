@@ -8,12 +8,11 @@ module.exports = {
         path: path.resolve(__dirname, ''),
         filename: './client/dist/bundle.js'
     },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-    ],
+    // plugins: [
+    //     new webpack.HotModuleReplacementPlugin(),
+    // ],
     devServer: {
-        contentBase: __dirname,
-        hot: true,
+        static: __dirname,
     },
     module: {
         rules: [
