@@ -1,5 +1,5 @@
 import React from 'react';
-import NetworkGraph from './NetworkGraph.jsx'
+import NetworkGraph from './NetworkGraph.js'
 import Typography from '@material-ui/core/Typography'
 
 const Canvas = (props) => {

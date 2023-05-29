@@ -1,32 +1,40 @@
 const path = require('path');
-const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: path.resolve(__dirname, './client/index.js'),
-    output:{
-        path: path.resolve(__dirname, ''),
-        filename: './client/dist/bundle.js'
+    entry: './src/index.js',
+    output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        clean: true,
     },
-    // plugins: [
-    //     new webpack.HotModuleReplacementPlugin(),
-    // ],
     devServer: {
-        static: __dirname,
+        static: './dist',
     },
+    optimization: {
+        runtimeChunk: 'single',
+    },
+    // devServer: {
+    //     static: __dirname,
+    // },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "./src/index.html", // base html
+        }),
+    ],
     module: {
         rules: [
             {
-                exclude: [/node_modules/, /onLoad.json/, /test/, /assets/],
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env', '@babel/preset-react']
-                    }
+                test: /\.js$/,
+                include: path.resolve(__dirname, 'src'),
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env', '@babel/preset-react']
                 }
             },
             {
-                test: /.css$/,
+                test: /\.css$/i,
                 use: ['style-loader', 'css-loader']
             }
         ]

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@material-ui/core';
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
-import TrafficButton from '../Components/TrafficButton.jsx'
+import TrafficButton from '../Components/TrafficButton.js'
 
 const buttonTheme = createTheme({
   typography: {

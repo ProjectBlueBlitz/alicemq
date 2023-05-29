@@ -1,5 +1,5 @@
 import React from 'react';
-import Main from './Containers/Main.jsx';
+import Main from './Containers/Main.js';
 
 const App = (props) => {
     return (

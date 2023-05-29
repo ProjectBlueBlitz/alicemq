@@ -1,9 +1,9 @@
 import React from 'react';
-import Button from './Button.jsx'
+import Button from './Button.js'
 import Typography from '@material-ui/core/Typography'
 import {TextField} from '@material-ui/core'
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
-import ErrorMessage from './ErrorMessage.jsx'
+import ErrorMessage from './ErrorMessage.js'
 
 const purpleTheme = createTheme({
   typography: {

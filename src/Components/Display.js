@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Canvas from './NetworkD3/Canvas.jsx'
-import NetworkGraph from './NetworkD3/NetworkGraph.jsx'
+import Canvas from './NetworkD3/Canvas.js'
+import NetworkGraph from './NetworkD3/NetworkGraph.js'
 
 const Display = (props) => {
   

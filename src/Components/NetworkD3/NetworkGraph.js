@@ -1,11 +1,11 @@
 import React from 'react';
-import Producers from './Producers.jsx';
-import Exchanges from './Exchanges.jsx';
-import Queues from './Queues.jsx';
-import Consumers from './Consumers.jsx';
-import Links from './Links.jsx';
-import Titles from './Titles.jsx'
-import Legend from './Legend.jsx'
+import Producers from './Producers.js';
+import Exchanges from './Exchanges.js';
+import Queues from './Queues.js';
+import Consumers from './Consumers.js';
+import Links from './Links.js';
+import Titles from './Titles.js'
+import Legend from './Legend.js'
 import * as d3 from 'd3';
 
 

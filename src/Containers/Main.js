@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Settings1 from '../Components/Settings1.jsx'
-import Display from '../Components/Display.jsx'
-import FrontPage from '../Components/FrontPage.jsx'
-import SignOut from '../Components/SignOut.jsx'
-import Spinner from '../Components/Spinner.jsx'
-import OverviewCards from '../Components/OverviewCards.jsx'
+import Settings1 from '../Components/Settings1.js'
+import Display from '../Components/Display.js'
+import FrontPage from '../Components/FrontPage.js'
+import SignOut from '../Components/SignOut.js'
+import Spinner from '../Components/Spinner.js'
+import OverviewCards from '../Components/OverviewCards.js'
 // import "@babel/polyfill";
 import BlueBottle from '../../server/blueBottle.js';
-import NodeCards from '../Components/NodeCards.jsx';
+import NodeCards from '../Components/NodeCards.js';
 import Typography from '@material-ui/core/Typography';
 
 // d3Data reference
